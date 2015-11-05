@@ -1,0 +1,11 @@
+1) NimGame 
+2) Add Digits - Hint : Digital roots
+3) Maximum Depth of Tree
+4) Delete Node in a Linked List
+5) Check if same Tree
+6) Move Zeores To the end of the array while maintaining the relative order of non -zero
+7) Invert Binary Tree - (if root == null)
+8) Minimum Depth of a Tree - between 1 and 0, 1 wins
+9) Longest Substring without repeat characters - hash map
+10) Two Sum - Hash map
+11)
