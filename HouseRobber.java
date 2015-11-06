@@ -20,7 +20,8 @@ public class HouseRobber {
         int i2 = robb(nums,1);
         return (i1>i2)?i1:i2;
     }
-    
+
+    // using dynamic programming
     public int robb(int nums[], int i) {
         if(i >= nums.length) {
             return 0;
@@ -38,6 +39,20 @@ public class HouseRobber {
             } else {
                 return money[i];
             }
+        }
+    }
+
+    //using only recursion -- very slow and memory inefficient
+    public int robb1(int nums[], int i) {
+        if(i >= nums.length) {
+            return 0;
+        } else {
+            int i2 = robb1(nums,i+2);
+            int i3 = robb1(nums,i+3);
+            if(i2 > i3)
+                return i2+nums[i];
+            else
+                return i3+nums[i];
         }
     }
 }
