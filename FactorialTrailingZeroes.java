@@ -11,7 +11,8 @@ public class FactorialTrailingZeroes {
         }
         return count;
     }
-
+    //java sucks... i wrote the same code in python and it worked!! Wasted a
+    //whole lot of time to get this to work!! Bummer
     public int trailingZeroes(int n) {
         int count = 0;
         for(int i=5; n/i!=0 ;i*=5){
