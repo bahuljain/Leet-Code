@@ -56,7 +56,8 @@ public class IsomorphicStrings {
     // this. This would be a much better alternative to what i did in the
     // beginning to handle revere mapping.
     public Character getKey(HashMap<Character,Character> map, Character target){
-        // Map.Entry retrieves every entry of the hashmap!! cool (should know this  )
+        // Map.Entry retrieves every entry of the hashmap!! cool (should know
+        // this)
         for (Map.Entry<Character,Character> entry : map.entrySet()) {
             if (entry.getValue().equals(target)) {
                 return entry.getKey();
