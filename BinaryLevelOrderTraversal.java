@@ -26,7 +26,8 @@ public class BinaryLevelOrderTraversal {
                 if(cur.right != null) queue.addLast(cur.right);
             }
         }
-
+        //Collections.reverse(vals);
+        //To reverse the list - as asked in question levelOrderBottom
         return vals;
     }
 }
