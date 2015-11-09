@@ -10,6 +10,5 @@ public class UniquePaths {
             }
         }
         return paths[m][n];
-
     }
 }
