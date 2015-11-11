@@ -26,11 +26,13 @@ public class PopulateNextNode {
     }
 
     // using O(1) space complexity
+
     public void connect(TreeLinkNode root) {
         if(root == null || root.left == null) return;
 
         root.left.next = root.right;
 
+        //key step
         if(root.next == null) root.right.next = null;
         else root.right.next = root.next.left;
 
