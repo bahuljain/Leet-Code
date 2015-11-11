@@ -18,4 +18,13 @@ public class SearchInsert {
             else return search(nums, target, mid+1, end);
         }
     }
+
+    public int searchInsert(int[] A, int target) {
+         // Note: The Solution object is instantiated only once and is reused by
+         // each test case.
+         for(int i = 0; i < A.length; i++){
+             if(A[i] >= target) return i;
+         }
+         return A.length;
+     }
 }
