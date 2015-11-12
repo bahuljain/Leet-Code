@@ -3,6 +3,7 @@ public class SearchInsert {
         return search(nums, target, 0, nums.length-1);
     }
 
+    // binary search
     public int search(int[] nums, int target, int start, int end) {
         if (start == end) {
             if(nums[end] == target) return end;
@@ -19,6 +20,7 @@ public class SearchInsert {
         }
     }
 
+    //linear search
     public int searchInsert(int[] A, int target) {
          // Note: The Solution object is instantiated only once and is reused by
          // each test case.
