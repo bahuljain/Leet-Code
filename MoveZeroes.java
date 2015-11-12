@@ -33,7 +33,8 @@ public class MoveZeroes {
         }
     }
 
-    public void pushZerosToEnd(int arr[], int n) {
+    public void pushZerosToEnd(int arr[]) {
+        int n = arr.length;
         int count = 0;  // Count of non-zero elements
 
         // Traverse the array. If element encountered is
@@ -46,7 +47,8 @@ public class MoveZeroes {
         // Now all non-zero elements have been shifted to
         // front and 'count' is set as index of first 0.
         // Make all elements 0 from count to end.
-        while (count < n) arr[count++] = 0;
+        // while (count < n) arr[count++] = 0;
+        Arrays.fill(arr, count, n, 0);
 
         return arr;
     }
