@@ -6,6 +6,7 @@ public class FirstBadVersion extends VersionControl {
         return search(1,n);
     }
 
+    // recurive binary search
     public int search(int start, int end) {
         if(start == end) {
             if(isBadVersion(start)) return start;
@@ -17,7 +18,8 @@ public class FirstBadVersion extends VersionControl {
         }
     }
 
-    // after banging my head over stack overflow tg123 
+    // after banging my head over stack overflow tg123
+    // iterative binary search
     public int firstBadVersion(int n) {
         int good = 0;
         int bad = n;
