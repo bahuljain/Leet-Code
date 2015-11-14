@@ -1,5 +1,5 @@
 public class ListCycleStartPoint {
-    // i was bored so i came up with the stupidest answer but 
+    // i was bored so i came up with the stupidest answer.
     public ListNode detectCycle(ListNode head) {
         ListNode cur = head;
         HashSet<ListNode> h = new HashSet();
