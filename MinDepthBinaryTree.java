@@ -9,10 +9,8 @@ public class MinDepthBinaryTree {
                 return right + 1;
             if (right == 0)
                 return left + 1;
-            if(left < right)
-                return left + 1;
-            else
-                return right + 1;
+
+            return 1 + Math.min(left, right);
         }
     }
 }

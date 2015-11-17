@@ -19,3 +19,7 @@ Interview Prep (Java) -
 17) Streams
 18) Collectors
 19) HashTables
+20) String Matching algorithms
+
+Pascal2
+count and say
