@@ -1,5 +1,5 @@
 public class Solution {
-    // FLow -> number = nums[i]
+    // Flow -> number = nums[i]
     // 1st time: Two doesn't get the number cause both one and two didn't have it before
     //           One gets the numbers
     //           Three doesn't get it cause two doesnt have it, hence nothing changes
