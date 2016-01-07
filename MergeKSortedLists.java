@@ -1,13 +1,22 @@
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode(int x) { val = x; }
- * }
- */
-public class MergeSortedLinkedList {
-    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+public class Solution {
+    public ListNode mergeKLists(ListNode[] lists) {
+    	if (lists.length == 0) return null;
+    	int n = lists.length;
+    	int m = (int) Math.ceil(n/2.0);
+
+    	ListNode[] merged = new ListNode[m];
+
+    	if(n % 2 != 0) merged[m - 1] = lists[n-- - 1];
+
+    	for (int i = 0; i < n; i+=2) {
+    		merged[i/2] = mergeTwoLists(lists[i], lists[i+1]);
+    	}
+
+    	if(merged.length == 1) return merged[0];
+    	return mergeKLists(merged);
+    }
+
+	public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         if (l1 == null) return l2;
 
         ListNode head = l1;
