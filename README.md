@@ -6,3 +6,5 @@ My attempts to each problem of leetcode.com
 Completed a CENTURY :) !! Hurray
 
 If you are looking to find the best answer, then definitely do not check my attempts. I have added the best answer to every problem following my attempt. Do check them - All credits go to @tg123 (He's the GOD of leet-code)
+
+Now I have started to write good solutions!! Better code, more efficiency!! :)
