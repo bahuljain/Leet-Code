@@ -36,4 +36,27 @@ public class Solution {
         }
         return head;
     }
+
+    // solution with PriorityQueue / Heap. But as it turns out its slower that
+    // previous method. Dont know why!
+    public ListNode mergeKListsII(ListNode[] lists) {
+        if (lists.length == 0) return null;
+        PriorityQueue<ListNode> heap = new PriorityQueue<>((x1,x2) -> new Integer(x1.val).compareTo(new Integer(x2.val)));
+
+        for(ListNode listHead : lists) {
+            if (listHead != null) heap.add(listHead);
+        }
+
+        if (heap.isEmpty()) return null;
+        ListNode head = heap.poll(); ListNode cur = head;
+        if (cur.next != null) heap.add(cur.next);
+
+        while(!heap.isEmpty()) {
+            cur.next = heap.poll();
+            cur = cur.next;
+            if (cur.next != null) heap.add(cur.next);
+        }
+
+        return head;
+    }
 }
