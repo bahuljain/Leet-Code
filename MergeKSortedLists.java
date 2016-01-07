@@ -41,22 +41,20 @@ public class Solution {
     // previous method. Dont know why!
     public ListNode mergeKListsII(ListNode[] lists) {
         if (lists.length == 0) return null;
-        PriorityQueue<ListNode> heap = new PriorityQueue<>((x1,x2) -> new Integer(x1.val).compareTo(new Integer(x2.val)));
+    	PriorityQueue<ListNode> heap = new PriorityQueue<>((x1,x2) -> x1.val - x2.val);
 
-        for(ListNode listHead : lists) {
-            if (listHead != null) heap.add(listHead);
-        }
+    	for(ListNode listHead : lists) {
+    		if (listHead != null) heap.offer(listHead);
+    	}
 
-        if (heap.isEmpty()) return null;
-        ListNode head = heap.poll(); ListNode cur = head;
-        if (cur.next != null) heap.add(cur.next);
+    	ListNode dummy = new ListNode(0); ListNode cur = dummy;
 
-        while(!heap.isEmpty()) {
-            cur.next = heap.poll();
-            cur = cur.next;
-            if (cur.next != null) heap.add(cur.next);
-        }
+    	while(!heap.isEmpty()) {
+    		cur.next = heap.poll();
+    		cur = cur.next;
+    		if (cur.next != null) heap.offer(cur.next);
+    	}
 
-        return head;
+    	return dummy.next;
     }
 }
