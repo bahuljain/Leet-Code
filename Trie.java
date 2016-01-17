@@ -1,10 +1,19 @@
 class TrieNode {
 	// Initialize your data structure here.
-	Map<Character, TrieNode> children;
-	boolean end = false;
+
+	// Since we already know that every string can only contain a-z characters
+	// we can simply make an array of size 26 for every character improving on
+	// time efficiency but if the words are sparse in usage of characters it
+	// could be more space efficient to use a map. Either ways its correct :)
+
+	// With array the running time is better than 65% submissions
+	// With map the running time is better than 37% submission
+
+	TrieNode[] children;
+	boolean end = false, empty = true;
 
 	public TrieNode() {
-		children = new HashMap<>();
+		children = new TrieNode[26];
 	}
 }
 
@@ -22,13 +31,14 @@ public class Trie {
 
 	private void add(TrieNode root, String word, int pos) {
 		if (pos < word.length()) {
-			char c = word.charAt(pos);
+			int c = word.charAt(pos) - 97;
 
-			if (root.children.containsKey(c)) {
-				add(root.children.get(c), word, pos + 1);
+			if (root.children[c] != null) {
+				add(root.children[c], word, pos + 1);
 			} else {
 				TrieNode child = new TrieNode();
-				root.children.put(c, child);
+				root.children[c] = child;
+				root.empty = false;
 				add(child, word, pos + 1);
 			}
 		} else {
@@ -45,11 +55,11 @@ public class Trie {
 		if (pos == word.length()) {
 			return (root.end) ? true : false;
 		} else {
-			if (root.children.isEmpty())
+			if (root.empty)
 				return false;
 			else {
-				char key = word.charAt(pos);
-				return (root.children.containsKey(key)) ? search(root.children.get(key), word, pos + 1) : false;
+				int x = word.charAt(pos) - 97;
+				return (root.children[x] != null) ? search(root.children[x], word, pos + 1) : false;
 			}
 		}
 	}
@@ -64,11 +74,11 @@ public class Trie {
 		if (pos == prefix.length()) {
 			return true;
 		} else {
-			if (root.children.isEmpty())
+			if (root.empty)
 				return false;
 			else {
-				char key = prefix.charAt(pos);
-				return (root.children.containsKey(key)) ? startsWith(root.children.get(key), prefix, pos + 1) : false;
+				int x = prefix.charAt(pos) - 97;
+				return (root.children[x] != null) ? startsWith(root.children[x], prefix, pos + 1) : false;
 			}
 		}
 	}
