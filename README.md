@@ -1,7 +1,7 @@
 # Leet-Code
 My attempts to each problem of leetcode.com
 
-![Progress](https://img.shields.io/badge/progress-146%20%2F%20285-ff69b4.svg)
+![Progress](https://img.shields.io/badge/progress-147%20%2F%20311-ff69b4.svg)
 
 Completed a CENTURY :) !! Hurray
 
